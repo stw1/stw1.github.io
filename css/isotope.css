@@ -1,1 +1,34 @@
-*{box-sizing:border-box}html{overflow-y:scroll}body{font-family:sans-serif}.grid{background:#fff}.grid:after{content:'';display:block;clear:both}.grid-sizer{min-width:200px}.grid-item{min-width:200px;width:25%;float:left}.grid-item img{display:block;max-width:100%}
+* {
+  box-sizing: border-box;
+}
+
+html {
+  overflow-y: scroll;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+.grid {
+  background: #fff;
+}
+.grid:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.grid-sizer {
+  min-width: 200px;
+}
+
+.grid-item {
+  min-width: 200px;
+  width: 25%;
+  float: left;
+}
+.grid-item img {
+  display: block;
+  max-width: 100%;
+}
