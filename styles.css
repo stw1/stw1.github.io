@@ -192,8 +192,43 @@ p { margin: 0 0 1em; }
 .card h3 { font-size: 19px; margin-bottom: 10px; }
 .card-body p:last-child { color: var(--text-muted); font-size: 15.5px; margin: 0; }
 
+/* ---------- Spaikz apps ---------- */
+.spaikz-intro {
+  display: flex; justify-content: space-between; align-items: flex-end; gap: 40px; margin-bottom: 48px;
+}
+.spaikz-intro h2 { font-size: clamp(30px, 4vw, 44px); font-weight: 800; margin-bottom: 14px; }
+.spaikz-intro .lede { color: var(--text-muted); font-size: 18px; max-width: 720px; margin: 0; }
+.spaikz-intro .btn { flex-shrink: 0; }
+.apps { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
+.app {
+  display: flex; flex-direction: column; padding: 24px; color: var(--text);
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
+  box-shadow: var(--shadow); transition: transform .2s, box-shadow .2s, border-color .2s;
+}
+.app:hover {
+  text-decoration: none; transform: translateY(-4px); border-color: color-mix(in srgb, var(--cardinal) 40%, var(--border));
+  box-shadow: 0 2px 4px rgba(0,0,0,.05), 0 16px 40px rgba(0,0,0,.12);
+}
+.app-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }
+.app-icon {
+  display: grid; place-items: center; width: 52px; height: 52px; border-radius: 14px;
+  font-size: 26px; background: var(--bg-alt); border: 1px solid var(--border);
+}
+.badge { font-size: 12px; font-weight: 600; padding: 4px 10px; border-radius: 999px; }
+.badge-live { background: #e6f4ea; color: #1e6b34; }
+.badge-beta { background: #e8effc; color: #1f4fa3; }
+.badge-soon { background: #fdf1df; color: #8a5300; }
+@media (prefers-color-scheme: dark) {
+  .badge-live { background: #143222; color: #7fd69a; }
+  .badge-beta { background: #172741; color: #8fb4f5; }
+  .badge-soon { background: #3a2a10; color: #f0c27a; }
+}
+.app h3 { font-size: 19px; margin-bottom: 8px; }
+.app p { color: var(--text-muted); font-size: 15.5px; margin-bottom: 16px; flex-grow: 1; }
+.app-platforms { font-size: 13px; font-weight: 600; color: var(--cardinal); letter-spacing: .02em; }
+
 /* ---------- Contact ---------- */
-.contact { background: var(--bg-alt); text-align: center; }
+.contact { text-align: center; }
 .contact-inner { display: flex; flex-direction: column; align-items: center; }
 .contact .lede { color: var(--text-muted); font-size: 19px; margin: 12px 0 28px; }
 .social { display: flex; gap: 14px; list-style: none; padding: 0; margin: 32px 0 0; }
@@ -217,7 +252,7 @@ p { margin: 0 0 1em; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .js .reveal { opacity: 1; transform: none; transition: none; }
-  .card, .btn, .social a { transition: none; }
+  .card, .app, .btn, .social a { transition: none; }
 }
 
 /* ---------- Responsive ---------- */
@@ -234,6 +269,7 @@ p { margin: 0 0 1em; }
   .timeline-item { grid-template-columns: 1fr; gap: 6px; padding-left: 36px; }
   .timeline-item::before { left: 0; }
   .education { margin-left: 0; }
+  .spaikz-intro { flex-direction: column; align-items: flex-start; gap: 24px; }
 }
 @media (max-width: 600px) {
   .nav-links li:not(:last-child) { display: none; }
